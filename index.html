@@ -87,23 +87,22 @@
         }
       };
 
-      function relMouseCoords(event){
+      function relMouseCoords(event) {
         var totalOffsetX = 0;
         var totalOffsetY = 0;
         var canvasX = 0;
         var canvasY = 0;
         var currentElement = this;
 
-        do{
+        do {
             totalOffsetX += currentElement.offsetLeft - currentElement.scrollLeft;
             totalOffsetY += currentElement.offsetTop - currentElement.scrollTop;
-        }
-        while(currentElement = currentElement.offsetParent)
+        } while (currentElement = currentElement.offsetParent);
 
         canvasX = event.pageX - totalOffsetX;
         canvasY = event.pageY - totalOffsetY;
 
-        return {x:canvasX, y:canvasY}
+        return {x: canvasX, y: canvasY}
       };
       HTMLCanvasElement.prototype.relMouseCoords = relMouseCoords;
 
@@ -150,11 +149,13 @@
       };
 
       var bugWasClicked = function(clickX, clickY, bugX, bugY, photonColor, bugColor) {
-        var rect = {x:bugX, y:bugY, w:10, h:10};
+        var rect = {x: bugX, y: bugY, w: 10, h: 10};
         var mx = clickX;
         var my = clickY;
-        if (mx>=rect.x && mx<=rect.x+rect.w && my>=rect.y && my<=rect.y+rect.h && photonColor===bugColor){
-          return true;
+        if (mx >= rect.x && mx <= rect.x + rect.w
+          && my >= rect.y && my <= rect.y + rect.h
+          && photonColor === bugColor) {
+            return true;
         } else {
           return false;
         }
@@ -172,7 +173,6 @@
 
       canvas.onclick = function(e) {
         var coords = canvas.relMouseCoords(e);
-        //drawPixel(coords.x, coords.y, currentColor);
         emitPhotonTo(coords.x, coords.y, currentColor);
         squashBugs(coords.x, coords.y, currentColor);
       };
