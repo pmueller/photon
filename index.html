@@ -54,6 +54,10 @@
       var currentColor = colors[Math.floor(Math.random() * colors.length)];
 
       var setPhotonColor = function() {
+        // draw the outline so the photon looks different from the bugs
+        ctx.fillStyle = "#000";
+        ctx.fillRect(245, 245, 12, 12);
+
         ctx.fillStyle = currentColor;
         ctx.fillRect(246, 246, 10, 10);
       }
