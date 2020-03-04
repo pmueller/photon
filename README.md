@@ -2,6 +2,8 @@
 
 A clicky game that requires mouse accuracy
 
+![Photon in action](demo/photon.gif)
+
 ## The game
 - You are the [photon cannon](https://liquipedia.net/starcraft/Photon_Cannon) in the middle of the game map
 - Enemies of various colors will spawn around the map
