@@ -11,6 +11,10 @@ A clicky game that requires mouse accuracy
 - Use `q`, `w`, `e`, `r` keys to change your color
 
 ## To play
+- [Play it here! http://abiding-balloon.surge.sh](http://abiding-balloon.surge.sh)
+
+OR
+
 - Clone this repo
 - `npm install`
 - open `index.html` in a browser
