@@ -1,17 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="eev.js"></script>
+    <script src="./node_modules/eev/eev.js"></script>
     <style>
       #game {
         border: 1px solid #111;
         background-color: #333;
       }
+
+      #legend {
+        background-color: #333;
+        width: 463px;
+        padding: 20px;
+        margin-top: 10px;
+        color: #fafafa;
+        text-align: center;
+      }
+      #legend > div {
+        display: inline;
+        padding: 0 15px;
+      }
+      #legend .color {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin-left: 2px;
+      }
+      .color.red     { background-color: #ff0808; }
+      .color.yellow  { background-color: #fff105; }
+      .color.teal    { background-color: #47fcad; }
+      .color.purple  { background-color: #864fff; }
     </style>
   </head>
   <body>
     <canvas id="game" width="501" height="501">
     </canvas>
+    <section id="legend">
+      <div>q <div class='color red'></div></div>
+      <div>w <div class='color yellow'></div></div>
+      <div>e <div class='color teal'></div></div>
+      <div>r <div class='color purple'></div></div>
+    </section>
     <script>
       var canvas = document.getElementById("game");
       var ctx = canvas.getContext("2d");
