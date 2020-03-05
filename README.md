@@ -20,6 +20,6 @@ OR
 - open `index.html` in a browser
 
 ## Todo
-- [ ] Add scoring
+- [x] Add scoring
 - [ ] Have a way for the game to end
 - [ ] Increase difficulty the longer a game goes on

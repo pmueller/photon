@@ -55,7 +55,7 @@
 
       var setPhotonColor = function() {
         // draw the outline so the photon looks different from the bugs
-        ctx.fillStyle = "#000";
+        ctx.fillStyle = "#fff";
         ctx.fillRect(245, 245, 12, 12);
 
         ctx.fillStyle = currentColor;
@@ -116,6 +116,7 @@
       };
 
       var bugs = [];
+      var score = 0;
 
       var drawBug = function(bug) {
         var x = bug[0];
@@ -133,9 +134,20 @@
         }
       };
 
+      var drawScore = function() {
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "14px serif";
+        var toDraw = "Score: " + score;
+        var txt = ctx.measureText(toDraw);
+        ctx.clearRect(0, 0, txt.width + 13, 16);
+        ctx.fillText("Score: " + score, 5, 13);
+      };
+      drawScore();
+
       var redraw = function() {
         setPhotonColor();
         drawBugs();
+        drawScore();
       };
 
       var emitPhotonTo = function(x, y, color) {
@@ -170,6 +182,7 @@
         while (i--) {
           if (bugWasClicked(x, y, bugs[i][0], bugs[i][1], color, bugs[i][2])) {
             bugs.splice(i, 1);
+            score++;
             redraw();
           }
         };
