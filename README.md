@@ -23,4 +23,4 @@ OR
 ## Todo
 - [x] Add scoring
 - [x] Have a way for the game to end
-- [ ] Increase difficulty the longer a game goes on
+- [x] Increase difficulty the longer a game goes on

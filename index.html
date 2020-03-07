@@ -233,8 +233,13 @@
         ctx.fillText(toDraw, 250, 250);
       };
 
+      var tick = false;
       var gameLoop = setInterval(function() {
-        timeLeft--;
+        tick = !tick
+        if (tick) {
+          timeLeft--;
+        }
+
         if (timeLeft <= 0) {
           gameover = true;
           drawGameover();
@@ -242,9 +247,11 @@
           return;
         }
 
-        addBug();
-        redraw();
-      }, 1000);
+        if (tick || score >= 30) {
+          addBug();
+          redraw();
+        }
+      }, 500);
     </script>
   </body>
 </html>
