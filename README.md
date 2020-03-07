@@ -12,7 +12,7 @@ A clicky game that requires mouse accuracy
 - You have 60 seconds to destroy as many enemies as possible
 
 ## To play
-- [Play it here! http://abiding-balloon.surge.sh](http://abiding-balloon.surge.sh)
+- [Play it here! http://photon.surge.sh](http://photon.surge.sh)
 
 OR
 
