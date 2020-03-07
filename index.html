@@ -7,7 +7,6 @@
         border: 1px solid #111;
         background-color: #333;
       }
-
       #legend {
         background-color: #333;
         width: 463px;
@@ -117,6 +116,7 @@
       };
 
       var bugs = [];
+      var squashedBugs = [];
       var score = 0;
       var timeLeft = 60;
       var gameover = false;
@@ -198,7 +198,8 @@
         var i = bugs.length;
         while (i--) {
           if (bugWasClicked(x, y, bugs[i][0], bugs[i][1], color, bugs[i][2])) {
-            bugs.splice(i, 1);
+            var squashed = bugs.splice(i, 1)[0];
+            squashedBugs.push(squashed);
             score++;
             redraw();
           }
@@ -219,6 +220,12 @@
 
       var drawGameover = function() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // display all the successful photons
+        for(var i = 0; i < squashedBugs.length; i++) {
+          emitPhotonTo(squashedBugs[i][0], squashedBugs[i][1], squashedBugs[i][2]);
+        }
+
+        // show score
         ctx.fillStyle = "#ffffff";
         ctx.font = "30px serif";
         ctx.textAlign = "center";
