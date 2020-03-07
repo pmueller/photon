@@ -9,6 +9,7 @@ A clicky game that requires mouse accuracy
 - Enemies of various colors will spawn around the map
 - You must click on the enemies to destroy them, but you can only destroy enemies that are the same as your current color
 - Use `q`, `w`, `e`, `r` keys to change your color
+- You have 60 seconds to destroy as many enemies as possible
 
 ## To play
 - [Play it here! http://abiding-balloon.surge.sh](http://abiding-balloon.surge.sh)
