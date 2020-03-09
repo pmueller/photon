@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Photon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       #game {
         border: 1px solid #111;
@@ -28,9 +30,26 @@
       .color.yellow  { background-color: #fff105; }
       .color.teal    { background-color: #47fcad; }
       .color.purple  { background-color: #864fff; }
+      .flash {
+        max-width: 463px;
+        padding: 10px 20px;
+        color: #721c24;
+        background-color: #f8d7da;
+      }
+      .only-mobile {
+        display: none;
+      }
+      @media (max-width: 500px) {
+        .only-mobile {
+          display: block;
+        }
+      }
     </style>
   </head>
   <body>
+    <p class="flash only-mobile">
+      Are you on a mobile device? Currently this game requires a keyboard and mouse. Check back later for a mobile version!
+    </p>
     <canvas id="game" width="501" height="501">
     </canvas>
     <section id="legend">
@@ -137,7 +156,7 @@
       };
 
       var drawScore = function() {
-        ctx.fillStyle = "#ffffff";
+        ctx.fillStyle = "#fff";
         ctx.font = "14px serif";
         var toDraw = "Score: " + score;
         var txt = ctx.measureText(toDraw);
@@ -147,7 +166,7 @@
       drawScore();
 
       var drawTimeLeft = function() {
-        ctx.fillStyle = "#ffffff";
+        ctx.fillStyle = "#fff";
         ctx.font = "14px serif";
         var toDraw = "Time: " + timeLeft;
         var txt = ctx.measureText(toDraw);
@@ -225,7 +244,7 @@
         }
 
         // show score
-        ctx.fillStyle = "#ffffff";
+        ctx.fillStyle = "#fff";
         ctx.font = "30px serif";
         ctx.textAlign = "center";
         var toDraw = "Game Over! Your score is " + score;
